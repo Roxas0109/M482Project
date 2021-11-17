@@ -1,14 +1,31 @@
 import random as rand
+from dict import graph
 
 tower = []
 
+#given a list finds the repeat numbers themselves not the index
 def find_repeat(numbers):
+    repeats = []
     seen = set()
     for index,num in enumerate(numbers):
         if num in seen:
-            return num
+            repeats.append(num)
         seen.add(num)
-    return 32
+    return repeats
+
+#given 2d list gives the number of the repeat in that list coresponding the the given index
+def find_repeat2(tower):
+    repeats = [None]*31
+    seen = set()
+    for index,row in enumerate(tower):
+        print(index, row)
+        seen = set()
+        for num in row:
+            if num in seen:
+                repeats[index] = num
+            seen.add(num)
+            graph[num]+=[index]
+    return repeats
 
 
 def rotate(index):
@@ -17,17 +34,19 @@ def rotate(index):
     tower[index][1] = tower[index][2]
     tower[index][2] = temp
 
-
-
-
+#generated the tower in 31*3 array, can be switch changing the value of n
 def generate():
-    n = 31
+    n = 3
     masterList = list(range(0,31)) *3
     rand.shuffle(masterList)
-    sublists = [masterList[i:i+n] for i in range(0, len(masterList), n)]
-    print(sublists)
+    tower = [masterList[i:i+n] for i in range(0, len(masterList), n)]
+    return tower
+    
 
 
 
 if __name__ == "__main__":
-    generate()
+    tower = generate()
+    print(tower)
+    print(find_repeat2(tower))
+    print(graph)
