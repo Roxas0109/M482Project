@@ -1,5 +1,6 @@
 import random as rand
 from dict import graph
+from generators import p1
 
 tower = []
 
@@ -38,7 +39,10 @@ def rotate(index):
 def generate():
     n = 3
     masterList = list(range(0,31)) *3
-    rand.shuffle(masterList)
+    for i in masterList:
+        masterList[i] = p1(i+1)
+    print(masterList)
+    # rand.shuffle(masterList)
     tower = [masterList[i:i+n] for i in range(0, len(masterList), n)]
     return tower
     
@@ -48,5 +52,5 @@ def generate():
 if __name__ == "__main__":
     tower = generate()
     print(tower)
-    print(find_repeat2(tower))
-    print(graph)
+    # print(find_repeat2(tower))
+    # print(graph)
