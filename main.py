@@ -2,27 +2,6 @@ import random as rand
 from dict import graph
 from generators import p1
 
-
-# def rotate(index):
-#     temp = tower[index][0]
-#     tower[index][0] = tower[index][1]
-#     tower[index][1] = tower[index][2]
-#     tower[index][2] = temp
-
-# generated the tower in 31*3 array, can be switch changing the value of n
-# def generate():
-#     n = 3
-#     masterList = list(range(0,31)) *3
-#     for i in masterList:
-#         masterList[i] = p1(i+1)
-#     print(masterList)
-#     tower = [masterList[i:i+n] for i in range(0, len(masterList), n)]
-#     return tower
-
-# while list is not done iterate
-# if num is not in tracker, add
-# if number doesn't have 3 occurances, add to masterList
-
 #func to generate numbers
 def generate():
     #init master list
