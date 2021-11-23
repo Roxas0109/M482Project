@@ -1,6 +1,7 @@
 import random as rand
 from dict import graph
 from generators import p1
+from collections import deque
 
 # func to generate numbers
 
@@ -36,12 +37,23 @@ def generate():
         # increment
         i += 1
 
-    tower = [masterList[i:i+3] for i in range(0, len(masterList), 3)]
+    #create tower list with deques of size 3 to represent slices
+    tower = [deque(masterList[i:i+3]) for i in range(0, len(masterList), 3)]
     return tower
 
 
 if __name__ == "__main__":
     # call func to generate the tower
     tower = generate()
-    print(*tower, sep='\n')
-    print('Slices: ', len(tower))
+    # print(*tower, sep='\n')
+    # print('Slices: ', len(tower))
+    #rotate first slice
+    print(tower[0])
+    tower[0].rotate()
+    print(tower[0])
+    tower[0].rotate()
+    print(tower[0])
+    tower[0].rotate()
+    print(tower[0])
+    tower[0].rotate()
+    print(tower[0])
