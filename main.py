@@ -2,6 +2,7 @@ import random as rand
 from dict import graph
 from generators import p1
 from collections import deque
+from checker import run
 
 # func to generate numbers
 
@@ -45,15 +46,16 @@ def generate():
 if __name__ == "__main__":
     # call func to generate the tower
     tower = generate()
-    # print(*tower, sep='\n')
+    print(run(tower))
+    print(*tower, sep='\n')
     # print('Slices: ', len(tower))
     #rotate first slice
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
+    # print(tower[0])
+    # tower[0].rotate()
+    # print(tower[0])
+    # tower[0].rotate()
+    # print(tower[0])
+    # tower[0].rotate()
+    # print(tower[0])
+    # tower[0].rotate()
+    # print(tower[0])
