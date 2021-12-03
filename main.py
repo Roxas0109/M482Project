@@ -1,6 +1,6 @@
 import random as rand
 from dict import graph
-from generators import p1
+from generators import p1,p2,p6
 from collections import deque
 from checker import run
 
@@ -46,9 +46,18 @@ def generate():
 if __name__ == "__main__":
     # call func to generate the tower
     tower = generate()
-    print(run(tower))
-    print(*tower, sep='\n')
+    for x in tower:
+        print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    # print(*tower, sep='\n')
     # print('Slices: ', len(tower))
+    print("SOLUTION")
+    sol=run(tower)
+    for x in sol:
+        print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+
+
+
+
     #rotate first slice
     # print(tower[0])
     # tower[0].rotate()
