@@ -46,12 +46,16 @@ def generate():
 if __name__ == "__main__":
     # call func to generate the tower
     tower = generate()
-    for x in tower:
-        print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    # for x in tower:
+    #     print('[%d, %d, %d]'%(x[0],x[1],x[2]))
     # print(*tower, sep='\n')
     # print('Slices: ', len(tower))
-    print("SOLUTION")
+
+
+    tower=[deque([5,3,1]),deque([5,4,2]),deque([2,6,4]),deque([3,1,5]),deque([1,4,2]),deque([6,6,3])]
+    # tower=[deque([6,3,6]),deque([1,4,2]),deque([1,5,3]),deque([6,4,2]),deque([5,4,2]),deque([5,3,1])]
     sol=run(tower)
+
     for x in sol:
         print('[%d, %d, %d]'%(x[0],x[1],x[2]))
 
@@ -59,12 +63,4 @@ if __name__ == "__main__":
 
 
     #rotate first slice
-    # print(tower[0])
     # tower[0].rotate()
-    # print(tower[0])
-    # tower[0].rotate()
-    # print(tower[0])
-    # tower[0].rotate()
-    # print(tower[0])
-    # tower[0].rotate()
-    # print(tower[0])
