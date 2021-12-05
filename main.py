@@ -20,7 +20,6 @@ def generate():
     while(not done):
         # calc number at current index starting from 1
         calcNum = p1(i+1)
-
         # if generated num isn't in tracker, add it in array and tracker
         if(calcNum not in tracker):
             tracker[calcNum] = 1
@@ -36,24 +35,41 @@ def generate():
             done = True
         # increment
         i += 1
+        
 
     #create tower list with deques of size 3 to represent slices
     tower = [deque(masterList[i:i+3]) for i in range(0, len(masterList), 3)]
     return tower
 
+def creatGraph(tower):
+    repeats = [None]*31
+    seen = set()
+    for index,row in enumerate(tower):
+        seen = set()
+        for num in row:
+            if num in seen:
+                repeats[index] = num
+            seen.add(num)
+            graph[num]+=[index]
+    return repeats
+
 
 if __name__ == "__main__":
     # call func to generate the tower
     tower = generate()
-    # print(*tower, sep='\n')
+    #print(tower)
+    repeats = creatGraph(tower)
+    #print(graph)
+    #print(repeats)
+    #print(*tower, sep='\n')
     # print('Slices: ', len(tower))
     #rotate first slice
     print(tower[0])
-    tower[0].rotate()
+    tower[0].rotate(-1)
     print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
-    tower[0].rotate()
-    print(tower[0])
+    #tower[0].rotate()
+    #print(tower[0])
+    #tower[0].rotate()
+    #print(tower[0])
+    #tower[0].rotate()
+    #print(tower[0])
