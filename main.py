@@ -1,5 +1,3 @@
-import random as rand
-from dict import graph
 from generators import p1,p2,p6
 from collections import deque
 from checker import run
@@ -52,8 +50,9 @@ if __name__ == "__main__":
     # print('Slices: ', len(tower))
 
 
-    tower=[deque([5,3,1]),deque([5,4,2]),deque([2,6,4]),deque([3,1,5]),deque([1,4,2]),deque([6,6,3])]
+    tower=[deque([5,3,1]),deque([5,4,2]),deque([6,4,2]),deque([1,5,3]),deque([1,4,2]),deque([6,3,6])]
     # tower=[deque([6,3,6]),deque([1,4,2]),deque([1,5,3]),deque([6,4,2]),deque([5,4,2]),deque([5,3,1])]
+    # tower=[deque([1,4,2]),deque([3,1,5]),deque([6,4,2]),deque([2,5,4]),deque([5,3,1]),deque([6,3,6])]
     sol=run(tower)
 
     for x in sol:
