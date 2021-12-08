@@ -28,20 +28,28 @@ def run(tower):
                 if(slices[i] < 2):
                     slices[i]+=1
                     tower[i].rotate()
-                    solList.pop()
-                    solList.pop()
-                    solList.pop()
+                    # solList.pop()
+                    # solList.pop()
+                    # solList.pop()
+                    print(solList)
+                    print("popped: [%d, %d, %d]"%(solList.pop(),solList.pop(),solList.pop()))
+                    print(solList)
+                    # print(col1)
+                    # print(col2)
+                    # print(col3)
                     col1.popitem()
                     col2.popitem()
                     col3.popitem()
-                    print("pop")
+                    # print(col1)
+                    # print(col2)
+                    # print(col3)
+                    # print("popped: [%d, %d, %d]"%(col1.popitem(),col2.popitem(),col3.popitem()))
     
-            elif(slices[i] < 2):
+            elif(slices[i] < 3):
                 slices[i]+=1
                 tower[i].rotate()
                 print("rotated slice: %d"%(i+1))
             else:
-                print("backtracked")
                 slices[i] = 0
                 # solList.pop()
                 # solList.pop()
@@ -50,6 +58,7 @@ def run(tower):
                 # col2.popitem()
                 # col3.popitem()
                 i-=1
+                print("backtracked to slice %d"%(i+1))
 
 
     li = [deque(solList[i:i+3]) for i in range(0, len(solList), 3)]
