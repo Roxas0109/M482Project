@@ -58,15 +58,12 @@ if __name__ == "__main__":
     #print('Slices: ', len(tower))
 
 
-    #tower=[deque([5,3,1]),deque([5,4,2]),deque([6,4,2]),deque([1,5,3]),deque([1,4,2]),deque([6,3,6])]
+    tower=[deque([5,3,1]),deque([5,4,2]),deque([6,4,2]),deque([1,5,3]),deque([1,4,2]),deque([6,3,6])]
     
-    size = len(tower)*3
-    print(size)
     
-    sol=solve(tower, size)
+    sol=solve(tower)
 
-    #for x in sol:
-    #    print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    print(sol)
 
     end = datetime.datetime.now()
     print("Time =", end - start)
