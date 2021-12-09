@@ -1,6 +1,6 @@
 from generators import p1,p2,p3,p4,p5,p6
 from collections import deque
-from checker import run,solve
+from checker import solve
 import datetime
 
 # func to generate numbers
@@ -19,7 +19,7 @@ def generate():
     while(True):
 
         # calc number at current index starting from 1
-        calcNum = p5(i+1)
+        calcNum = p1(i+1)
 
         # if generated num isn't in tracker, add it in array and tracker
         if(calcNum not in tracker):
