@@ -1,6 +1,6 @@
 from generators import p1,p2,p3,p4,p5,p6
 from collections import deque
-from checker import run
+from checker import run,solve
 import datetime
 
 # func to generate numbers
@@ -19,7 +19,7 @@ def generate():
     while(True):
 
         # calc number at current index starting from 1
-        calcNum = p1(i+1)
+        calcNum = p5(i+1)
 
         # if generated num isn't in tracker, add it in array and tracker
         if(calcNum not in tracker):
@@ -48,23 +48,25 @@ def generate():
 if __name__ == "__main__":
     #timer
     start = datetime.datetime.now()
+    print(start)
 
     # call func to generate the tower
     tower = generate()
-    # for x in tower:
-    #     print('[%d, %d, %d]'%(x[0],x[1],x[2]))
-    # print(*tower, sep='\n')
-    # print('Slices: ', len(tower))
+    #for x in tower:
+    #    print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    #print(*tower, sep='\n')
+    #print('Slices: ', len(tower))
 
 
-    # tower=[deque([5,3,1]),deque([5,4,2]),deque([6,4,2]),deque([1,5,3]),deque([1,4,2]),deque([6,3,6])]
+    #tower=[deque([5,3,1]),deque([5,4,2]),deque([6,4,2]),deque([1,5,3]),deque([1,4,2]),deque([6,3,6])]
     
     size = len(tower)*3
+    print(size)
     
-    sol=run(tower, size)
+    sol=solve(tower, size)
 
-    for x in sol:
-        print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    #for x in sol:
+    #    print('[%d, %d, %d]'%(x[0],x[1],x[2]))
 
     end = datetime.datetime.now()
     print("Time =", end - start)
