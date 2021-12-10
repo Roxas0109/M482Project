@@ -3,9 +3,9 @@ from dict import slices
 
 def solve(tower):
     sides = {
-        1 : [],
-        2 : [],
-        3 : []
+        1 : [1,2,3],
+        2 : [4,5,6],
+        3 : [7,8,9]
     }
     #append the first row of tower to dictionary
     sides[1].append(tower[0][0])
@@ -40,9 +40,7 @@ def solve(tower):
     row1 = sides[1]
     row2 = sides[2]
     row3 = sides[3]
-    together = []
-    for (x,y,z) in zip(row1,row2,row3):
-        together.extend((x,y,z))
+    together = [(x,y,z) for (x,y,z) in zip(row1, row2, row3)]
     together = [deque(together[i:i+3]) for i in range(0, len(together), 3)]
     for x in together:
        print('[%d, %d, %d]'%(x[0],x[1],x[2]))
