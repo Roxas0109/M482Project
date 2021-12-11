@@ -14,7 +14,7 @@ def solve(tower):
     i = 1
     while(True):
         if(slices[0] > 0):
-            print("No Solution")
+            #print("No Solution")
             return False
             break
 
@@ -44,7 +44,7 @@ def solve(tower):
     together = [(x,y,z) for (x,y,z) in zip(row1, row2, row3)]
     together = [deque(together[i:i+3]) for i in range(0, len(together), 3)]
     for x in together:
-       print('[%d, %d, %d]'%(x[0],x[1],x[2]))
-
+       print('Found: [%d, %d, %d]'%(x[0],x[1],x[2]))
+    
     return together
 

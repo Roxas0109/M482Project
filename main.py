@@ -52,9 +52,9 @@ def minOb(tower,i):
     minimumObstacle = False
     for j in range(comboLen):
         comboList = list(combos[j])
-        if solve(comboList):
-          minimumObstacle = comboList
-    return minimumObstacle
+        sol = solve(comboList)
+        if(sol):
+            return minimumObstacle
 
 
 if __name__ == "__main__":
@@ -64,7 +64,6 @@ if __name__ == "__main__":
 
     # call func to generate the tower
     tower = generate()
-    print(tower[0][0])
     #for x in tower:
     #    print('[%d, %d, %d]'%(x[0],x[1],x[2]))
     #print(*tower, sep='\n')
@@ -77,7 +76,7 @@ if __name__ == "__main__":
     sol=solve(tower)
     print('after solve\n\n\n')
 
-    for i in range(1,31):
+    for i in reversed(range(1,31)):
         print(i)
         res = minOb(tower,i)
         if res:
