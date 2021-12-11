@@ -2,6 +2,8 @@ from generators import p1,p2,p3,p4,p5,p6
 from collections import deque
 from checker import solve
 import datetime
+from math import comb
+from itertools import combinations
 
 # func to generate numbers
 def generate():
@@ -44,6 +46,16 @@ def generate():
     tower = [deque(masterList[i:i+3]) for i in range(0, len(masterList), 3)]
     return tower
 
+def minOb(tower,i):
+    comboLen = comb(31, i) # 31 choose i
+    combos = list(combinations(tower, i))
+    minimumObstacle = False
+    for j in range(comboLen):
+        comboList = list(combos[j])
+        if solve(comboList):
+          minimumObstacle = comboList
+    return minimumObstacle
+
 
 if __name__ == "__main__":
     #timer
@@ -52,6 +64,7 @@ if __name__ == "__main__":
 
     # call func to generate the tower
     tower = generate()
+    print(tower[0][0])
     #for x in tower:
     #    print('[%d, %d, %d]'%(x[0],x[1],x[2]))
     #print(*tower, sep='\n')
@@ -62,6 +75,15 @@ if __name__ == "__main__":
     
     
     sol=solve(tower)
+    print('after solve\n\n\n')
+
+    for i in range(1,31):
+        print(i)
+        res = minOb(tower,i)
+        if res:
+            print(res)
+            break
+
 
     end = datetime.datetime.now()
     print("Time =", end - start)

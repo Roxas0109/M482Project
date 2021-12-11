@@ -3,9 +3,9 @@ from dict import slices
 
 def solve(tower):
     sides = {
-        1 : [1,2,3],
-        2 : [4,5,6],
-        3 : [7,8,9]
+        1 : [],
+        2 : [],
+        3 : []
     }
     #append the first row of tower to dictionary
     sides[1].append(tower[0][0])
@@ -15,6 +15,7 @@ def solve(tower):
     while(True):
         if(slices[0] > 0):
             print("No Solution")
+            return False
             break
 
         if(tower[i][0] not in sides[1]) and (tower[i][1] not in sides[2]) and (tower[i][2] not in sides[3]):
