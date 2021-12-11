@@ -1,7 +1,7 @@
 from collections import deque
 from dict import slices
 
-def solve(tower):
+def solve1(tower):
     sides = {
         1 : [],
         2 : [],
