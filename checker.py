@@ -14,9 +14,9 @@ def solve1(tower):
     i = 1
     while(True):
         if(slices[0] > 0):
-            #print("No Solution")
-            return False
-            break
+            print("No Solution")
+            # return False
+            return
 
         if(tower[i][0] not in sides[1]) and (tower[i][1] not in sides[2]) and (tower[i][2] not in sides[3]):
             sides[1].append(tower[i][0])
@@ -41,10 +41,14 @@ def solve1(tower):
     row1 = sides[1]
     row2 = sides[2]
     row3 = sides[3]
-    together = [(x,y,z) for (x,y,z) in zip(row1, row2, row3)]
+    # together = [list.extend(x,y,z) for (x,y,z) in zip(row1, row2, row3)]
+    together = []
+    for (x,y,z) in zip(row1,row2,row3):
+        together.extend((x,y,z))
     together = [deque(together[i:i+3]) for i in range(0, len(together), 3)]
+    print('Solution Found:')
     for x in together:
-       print('Found: [%d, %d, %d]'%(x[0],x[1],x[2]))
+       print('[%d, %d, %d]'%(x[0],x[1],x[2]))
     
     return together
 
