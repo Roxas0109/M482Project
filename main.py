@@ -73,7 +73,7 @@ if __name__ == "__main__":
             s = list(s)
             #converts list to deque
             t = [deque(x) for x in s]
-            # calls solve function on t (partial tower). if result is found function is done
+            # calls solve function on t (partial tower). if result is not found then it is the minimal obsticle
             if not solve(t):
                 found = True
                 print('Found Minimal Obstical of size ' + str(i) + '.')
