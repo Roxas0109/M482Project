@@ -62,7 +62,8 @@ if __name__ == "__main__":
     print('\n\n\nFinding Minimal Obsticle')
 
     # Creates combinations starting from 30 to 2 to find the minimal obsticle
-    for i in reversed(range(2,len(tower))):
+    minOb = None
+    for i in range(2,len(tower)):
         found = False
         #creats all combinations of size i
         subsets = list(combinations(tower,i))
@@ -73,8 +74,11 @@ if __name__ == "__main__":
             #converts list to deque
             t = [deque(x) for x in s]
             # calls solve function on t (partial tower). if result is found function is done
-            if (solve(t)):
+            if not solve(t):
                 found = True
+                print('Found Minimal Obstical of size ' + str(i) + '.')
+                for x in s:
+                    print(x)
                 break
             s.clear()
         if found:

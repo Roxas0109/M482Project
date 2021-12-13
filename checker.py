@@ -55,9 +55,9 @@ def solve(tower):
     for (x,y,z) in zip(row1,row2,row3):
         together.extend((x,y,z))
     together = [deque(together[i:i+3]) for i in range(0, len(together), 3)]
-    print('Solution Found:')
-    for x in together:
-       print('[%d, %d, %d]'%(x[0],x[1],x[2]))
+    #print('Solution Found:')
+    #for x in together:
+    #   print('[%d, %d, %d]'%(x[0],x[1],x[2]))
     
     return together
 
