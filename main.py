@@ -42,6 +42,7 @@ def generate():
 
         # increment
         i += 1
+        
 
     #create tower list with deques of size 3 to represent slices
     tower = [deque(masterList[i:i+3]) for i in range(0, len(masterList), 3)]
