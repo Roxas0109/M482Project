@@ -1,0 +1,14 @@
+No solution.
+
+
+
+Finding Minimal Obsticle
+2
+3
+4
+Found Minimal Obstical of size 4.
+[23, 14, 12]
+[12, 1, 23]
+[21, 12, 10]
+[1, 21, 10]
+Time = 0:00:00.172001
